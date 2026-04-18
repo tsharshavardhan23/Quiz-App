@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ultimate Quiz App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+
+<!-- LOGIN -->
+<div id="login-screen" class="card">
+  <h2>Quiz App 🎯</h2>
+
+  <input id="username" placeholder="Name">
+  <input id="email" placeholder="Email">
+
+  <select id="category">
+    <option value="">Select Category</option>
+    <option value="general">General</option>
+    <option value="tech">Tech</option>
+    <option value="aptitude">Aptitude</option>
+  </select>
+
+  <select id="avatarSelect">
+    <option value="https://i.pravatar.cc/100?img=1">Avatar 1</option>
+    <option value="https://i.pravatar.cc/100?img=2">Avatar 2</option>
+    <option value="https://i.pravatar.cc/100?img=3">Avatar 3</option>
+  </select>
+
+  <button onclick="login()">Start</button>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz-screen" class="card" style="display:none;">
+  <h3 id="score-display">Score: 0</h3>
+  <h2 id="question"></h2>
+  <div id="answers"></div>
+</div>
+
+<!-- RESULT -->
+<div id="leaderboard-screen" class="card" style="display:none;">
+  <h2>Result</h2>
+  <h3 id="final-score"></h3>
+  <p id="xp"></p>
+  <button onclick="restartQuiz()">Play Again</button>
+</div>
+
+<!-- PROFILE -->
+<div id="profile-screen" class="card" style="display:none;">
+  <h2>👤 Profile</h2>
+  <img id="avatar" width="80">
+  <p id="profile-name"></p>
+  <p id="profile-xp"></p>
+</div>
+
+<!-- NAV -->
+<div class="bottom-nav">
+  <button onclick="showScreen('quiz')">🏠</button>
+  <button onclick="showScreen('leaderboard')">🏆</button>
+  <button onclick="showScreen('profile')">👤</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
